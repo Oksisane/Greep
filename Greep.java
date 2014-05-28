@@ -134,7 +134,7 @@ public abstract class Greep extends Actor
     /**
      * Turn to face an arbitrary point on the map.
      */
-    protected final void turnTowards(int x, int y)
+    public final void turnTowards(int x, int y)
     {
         if(mode == MODE_FLIPPED) return;
         int deltaX = x - getX();
