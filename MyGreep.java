@@ -46,7 +46,7 @@ public class MyGreep
 {
   private static final int TOMATO_LOCATION_KNOWN = 1;
   
-  public SimpleGreep(Ship ship)
+  public MyGreep(Ship ship)
   {
     super(ship);
   }
@@ -54,7 +54,7 @@ public class MyGreep
   public void act()
   {
     super.act();
-    
+  
 
     checkFood();
     if (carryingTomato())
@@ -75,7 +75,7 @@ public class MyGreep
       turnTowards(getMemory(1), getMemory(2));
       move();
     }
-    else if (numberOfOpponents(false) > 3)
+    else if ((numberOfOpponents(false) > numberOfFriends(false)) && ((numberOfOpponents(true) > numberOfFriends(true)) || numberOfFriends(true)==0))
     {
       kablam();
     }
@@ -97,33 +97,47 @@ public class MyGreep
     if (tomatoes != null)
     {
       loadTomato();
-      
-
-
-      setMemory(0, 1);
-      setMemory(1, tomatoes.getX());
-      setMemory(2, tomatoes.getY());
     }
   }
   
   private void randomWalk()
   {
-    if (randomChance(3)) {
-      turn((Greenfoot.getRandomNumber(3) - 1) * 100);
+    if ((atWater()||moveWasBlocked())) {
+      if ( getMemory(3) > 20){
+          kablam();
+          setMemory(3,0);
+     }
+     else{
+            turn(33);
+     }
+      setMemory(3, getMemory(3)+1);
+    }
+    else{
+        setMemory(3,0);    
     }
     move();
   }
+  
+  /*private int[] pointInFront(){
+    getRoation()
+  }*/
   
   private void bringTomatoHome()
   {
     if (atShip())
     {
       dropTomato();
+      turn(180);
     }
     else
     {
       turnHome();
-      move();
+      if (atWater()||moveWasBlocked()) {
+        randomWalk();
+      }
+      else{
+        move();
+      }
     }
   }
   
@@ -147,7 +161,7 @@ public class MyGreep
   
   public String getName()
   {
-    return "Simple";
+    return "EhsanandNiels";
   }
 }
 
