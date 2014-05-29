@@ -6,15 +6,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * Rules:
  * 
  * Rule 1 
- * Only change the class ÔMyGreepÕ. No other classes may be modiÞed or created. 
+ * Only change the class ï¿½MyGreepï¿½. No other classes may be modiï¿½ed or created. 
  *
  * Rule 2 
- * You cannot extend the GreepsÕ memory. That is: you are not allowed to add 
- * Þelds (other than Þnal Þelds) to the class. Some general purpose memory is
+ * You cannot extend the Greepsï¿½ memory. That is: you are not allowed to add 
+ * ï¿½elds (other than ï¿½nal ï¿½elds) to the class. Some general purpose memory is
  * provided. (The ship can also store data.) 
  * 
  * Rule 3 
- * You can call any method deÞned in the "Greep" superclass, except act(). 
+ * You can call any method deï¿½ned in the "Greep" superclass, except act(). 
  * 
  * Rule 4 
  * Greeps have natural GPS sensitivity. You can call getX()/getY() on any object
@@ -23,8 +23,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * 
  * Rule 5 
  * No creation of objects. You are not allowed to create any scenario objects 
- * (instances of user-deÞned classes, such as MyGreep). Greeps have no magic 
- * powers Ð they cannot create things out of nothing. 
+ * (instances of user-deï¿½ned classes, such as MyGreep). Greeps have no magic 
+ * powers ï¿½ they cannot create things out of nothing. 
  * 
  * Rule 6 
  * You are not allowed to call any methods (other than those listed in Rule 4)
