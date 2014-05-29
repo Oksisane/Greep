@@ -57,6 +57,7 @@ public class MyGreep
   
 
     checkFood();
+    shareInfo();
     if (carryingTomato())
     {
       bringTomatoHome();
@@ -90,20 +91,28 @@ public class MyGreep
       move();
     }
   }
-  
+  public void shareInfo(){
+     Greep friend = getFriend();
+     if(getFriend()!= null && getMemory(1) == 1 && friend.getMemory(0)== 0 ){
+        friend.setMemory(0,1);
+        friend.setMemory(1, getMemory(1));
+        friend.setMemory(2, getMemory(2));
+    }
+}
   public void checkFood()
   {
     TomatoPile tomatoes = getTomatoes();
     if (tomatoes != null)
     {
       loadTomato();
+
     }
   }
   
   private void randomWalk()
   {
     if ((atWater()||moveWasBlocked())) {
-      if ( getMemory(3) > 20){
+      if ( getMemory(3) >5){
           kablam();
           setMemory(3,0);
      }
