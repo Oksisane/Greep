@@ -46,7 +46,7 @@ public class ENGreep
 {
   private static final int TOMATO_LOCATION_KNOWN = 1;
   
-  public MyGreep(Ship ship)
+  public ENGreep(Ship ship)
   {
     super(ship);
   }
