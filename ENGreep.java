@@ -44,7 +44,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 public class ENGreep
   extends Greep
 {
-  private static final int TOMATO_LOCATION_KNOWN = 1;
+  private static final boolean TOMATO_LOCATION_KNOWN = true;
   
   public ENGreep(Ship ship)
   {
@@ -71,7 +71,7 @@ public class ENGreep
         move();
       }
     }
-    else if (getMemory(0) == 1)
+    else if (getFlag(1) == true)
     {
       turnTowards(getMemory(1), getMemory(2));
       move();
@@ -93,8 +93,8 @@ public class ENGreep
   }
   public void shareInfo(){
      Greep friend = getFriend();
-     if(getFriend()!= null && getMemory(1) == 1 && friend.getMemory(0)== 0 ){
-        friend.setMemory(0,1);
+     if(getFriend()!= null && getFlag(1) == TOMATO_LOCATION_KNOWN && friend.getFlag(1)!= TOMATO_LOCATION_KNOWN ){
+        friend.setFlag(1,TOMATO_LOCATION_KNOWN);
         friend.setMemory(1, getMemory(1));
         friend.setMemory(2, getMemory(2));
     }
@@ -105,25 +105,29 @@ public class ENGreep
     if (tomatoes != null)
     {
       loadTomato();
-
+      setFlag(1, TOMATO_LOCATION_KNOWN);
+      setMemory(1, tomatoes.getX());
+      setMemory(2, tomatoes.getY());
+    }
+    else if ( distanceTo(getMemory(1), getMemory(2)) < 10 && getFlag(1) == TOMATO_LOCATION_KNOWN){
+      setFlag(1, TOMATO_LOCATION_KNOWN);
+      setMemory(1, 0);
+      setMemory(2, 0);
     }
   }
   
   private void randomWalk()
   {
-    if ((atWater()||moveWasBlocked())) {
-      if ( getMemory(3) >5){
-          kablam();
-          setMemory(3,0);
+
+   if ((atWater()||moveWasBlocked())) {
+         setMemory(0, getMemory(0)+1);
+         if (getMemory(0)> 5 && getFlag(1)== (TOMATO_LOCATION_KNOWN || carryingTomato())){
+            setMemory(3,10);
+            turn(Greenfoot.getRandomNumber(200)+45);
+         }
+         else 
+            turn(Greenfoot.getRandomNumber(270)+90);
      }
-     else{
-            turn(33);
-     }
-      setMemory(3, getMemory(3)+1);
-    }
-    else{
-        setMemory(3,0);    
-    }
     move();
   }
   
@@ -136,11 +140,17 @@ public class ENGreep
     if (atShip())
     {
       dropTomato();
-      turn(180);
+      turnTowards(getMemory(1), getMemory(2));
     }
     else
     {
-      turnHome();
+     if ( getMemory(3) > 0){
+          setMemory(3, getMemory(3)-1);
+     }
+     else{
+        turnHome();
+     }
+
       if (atWater()||moveWasBlocked()) {
         randomWalk();
       }

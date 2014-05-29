@@ -23,7 +23,7 @@ public class Ship extends Actor
     private Greep createGreep() 
     {
         if(teamNumber == 1) {
-            return new MyGreep(this);
+            return new ENGreep(this);
         }
         else {
             return new SimpleGreep(this);
