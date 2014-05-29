@@ -41,7 +41,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * @author (your name here)
  * @version 0.1
  */
-public class MyGreep
+public class ENGreep
   extends Greep
 {
   private static final int TOMATO_LOCATION_KNOWN = 1;
