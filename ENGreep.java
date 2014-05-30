@@ -71,7 +71,7 @@ public class ENGreep
         move();
       }
     }
-    else if (getFlag(1) == true)
+    else if (getFlag(1) == true && !atWater())
     {
       turnTowards(getMemory(1), getMemory(2));
       move();
@@ -83,12 +83,6 @@ public class ENGreep
     else
     {
       randomWalk();
-    }
-    if ((atWater()) || (moveWasBlocked()))
-    {
-      int r = getRotation();
-      setRotation(r + Greenfoot.getRandomNumber(2) * 180 - 90);
-      move();
     }
   }
   public void shareInfo(){
@@ -110,7 +104,7 @@ public class ENGreep
       setMemory(2, tomatoes.getY());
     }
     else if ( distanceTo(getMemory(1), getMemory(2)) < 10 && getFlag(1) == TOMATO_LOCATION_KNOWN){
-      setFlag(1, TOMATO_LOCATION_KNOWN);
+      setFlag(1, false);
       setMemory(1, 0);
       setMemory(2, 0);
     }
@@ -121,13 +115,19 @@ public class ENGreep
 
    if ((atWater()||moveWasBlocked())) {
          setMemory(0, getMemory(0)+1);
-         if (getMemory(0)> 5 && getFlag(1)== (TOMATO_LOCATION_KNOWN || carryingTomato())){
-            setMemory(3,10);
-            turn(Greenfoot.getRandomNumber(200)+45);
+        if(getMemory(0) > 50){
+            kablam();
+        }
+        if (getMemory(0)> 3 && getFlag(1)== (TOMATO_LOCATION_KNOWN || carryingTomato())){
+            setMemory(3,5);
+            turn(Greenfoot.getRandomNumber(60)+90);
          }
          else 
             turn(Greenfoot.getRandomNumber(270)+90);
      }
+    else {
+        setMemory(0,0);
+    }
     move();
   }
   
