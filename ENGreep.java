@@ -76,7 +76,7 @@ public class ENGreep
       turnTowards(getMemory(1), getMemory(2));
       move();
     }
-    else if ((numberOfOpponents(false) > numberOfFriends(false)) && ((numberOfOpponents(true) > numberOfFriends(true)) || numberOfFriends(true)==0))
+    else if ( !carryingTomato() && (numberOfOpponents(false) > numberOfFriends(false)) && ((numberOfOpponents(true) > numberOfFriends(true)) || numberOfFriends(true)==0))
     {
       kablam();
     }

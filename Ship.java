@@ -26,7 +26,7 @@ public class Ship extends Actor
             return new ENGreep(this);
         }
         else {
-            return new SimpleGreep(this);
+            return new MyGreep(this);
         }        
     }
     
