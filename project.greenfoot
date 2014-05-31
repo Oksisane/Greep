@@ -1,11 +1,19 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Sat May 31 15:11:04 CDT 2014
+=======
+#Fri May 30 11:54:43 CDT 2014
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target10.editor.width=900
 target2.width=80
 target8.name=ENGreep
 target11.y=310
+<<<<<<< HEAD
 target11.x=100
 target5.naviview.expanded=true
+=======
+target11.x=10
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 class.Ship.superclass=greenfoot.Actor
 class.MyGreep.image=greep.png
 dependency12.type=UsesDependency
@@ -13,22 +21,37 @@ class.TomatoPile.image=tomato.png
 dependency22.type=UsesDependency
 target7.showInterface=false
 target1.type=AbstractTarget
+<<<<<<< HEAD
 mainWindow.height=1096
 target2.editor.y=204
 target2.editor.x=327
+=======
+mainWindow.height=786
+target2.editor.y=320
+target2.editor.x=423
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency9.to=TomatoPile
 target1.height=50
 target8.y=10
 dependency16.type=UsesDependency
 target8.x=70
 class.World.superclass=
+<<<<<<< HEAD
 dependency21.to=ENGreep
 target2.editor.width=1416
+=======
+dependency21.to=SimpleGreep
+target2.editor.width=900
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency2.type=UsesDependency
 target5.type=ClassTarget
 target6.y=190
 target6.x=10
+<<<<<<< HEAD
 dependency19.to=Smoke
+=======
+dependency19.to=Ship
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target1.showInterface=false
 target4.y=130
 target4.x=100
@@ -37,15 +60,25 @@ dependency6.type=UsesDependency
 target9.type=ClassTarget
 target9.editor.width=900
 target4.showInterface=false
+<<<<<<< HEAD
 dependency20.from=ScoreBoard
+=======
+dependency20.from=ENGreep
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target2.y=70
 target2.x=160
 target10.type=ClassTarget
 target8.height=50
 dependency10.to=Earth
+<<<<<<< HEAD
 dependency14.from=Ship
 dependency24.from=Ship
 dependency18.from=Greep
+=======
+dependency14.from=Greep
+dependency24.from=ENGreep
+dependency18.from=Ship
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target11.height=50
 target1.editor.height=710
 dependency4.from=Earth
@@ -55,7 +88,11 @@ target1.name=Greep
 target10.showInterface=false
 target7.editor.height=784
 dependency8.from=Timer
+<<<<<<< HEAD
 dependency15.to=Counter
+=======
+dependency15.to=Earth
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target3.editor.y=42
 target3.editor.x=44
 class.Counter.superclass=greenfoot.Actor
@@ -63,7 +100,11 @@ target5.name=Earth
 class.Greep.superclass=greenfoot.Actor
 class.ScoreBoard.superclass=greenfoot.Actor
 world.lastInstantiated=Earth
+<<<<<<< HEAD
 mainWindow.width=1936
+=======
+mainWindow.width=1100
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target10.editor.y=42
 target9.name=Counter
 target10.editor.x=44
@@ -83,11 +124,19 @@ dependency17.type=UsesDependency
 dependency3.type=UsesDependency
 target6.type=ClassTarget
 target2.height=50
+<<<<<<< HEAD
 dependency11.to=Ship
 dependency11.from=MyGreep
 class.MyGreep.superclass=Greep
 target11.editor.y=-8
 target11.editor.x=-8
+=======
+dependency11.to=Greep
+dependency11.from=Ship
+class.MyGreep.superclass=Greep
+target11.editor.y=42
+target11.editor.x=44
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency7.type=UsesDependency
 target1.naviview.expanded=true
 dependency21.from=Ship
@@ -95,18 +144,30 @@ target11.type=ClassTarget
 target10.editor.height=700
 version=2.5.0
 target5.editor.width=900
+<<<<<<< HEAD
 dependency15.from=Ship
+=======
+dependency15.from=Greep
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency6.to=Greep
 target2.showInterface=false
 dependency1.from=Earth
 dependency25.from=SimpleGreep
 target5.editor.y=42
 target5.editor.x=44
+<<<<<<< HEAD
 mainWindow.y=-8
 target5.showInterface=false
 mainWindow.x=-8
 dependency19.from=Greep
 dependency16.to=Ship
+=======
+mainWindow.y=226
+target5.showInterface=false
+mainWindow.x=353
+dependency19.from=ENGreep
+dependency16.to=Smoke
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 class.Smoke.superclass=greenfoot.Actor
 target8.showInterface=false
 dependency5.from=Earth
@@ -118,10 +179,17 @@ target6.name=TomatoPile
 target9.height=50
 target6.editor.y=42
 dependency23.to=TomatoPile
+<<<<<<< HEAD
 target11.editor.width=1616
 target6.editor.x=44
 target12.y=250
 target5.editor.height=946
+=======
+target11.editor.width=900
+target6.editor.x=44
+target12.y=250
+target5.editor.height=700
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target12.x=10
 dependency10.type=UsesDependency
 class.Explosion.superclass=greenfoot.Actor
@@ -132,7 +200,11 @@ target8.editor.height=784
 target10.x=10
 dependency2.to=Timer
 target12.width=100
+<<<<<<< HEAD
 target11.name=MyGreep
+=======
+target11.name=Timer
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 class.TomatoPile.superclass=greenfoot.Actor
 dependency14.type=UsesDependency
 target12.height=50
@@ -143,7 +215,11 @@ dependency24.type=UsesDependency
 target6.height=50
 target3.type=ClassTarget
 target3.editor.width=900
+<<<<<<< HEAD
 dependency12.to=TomatoPile
+=======
+dependency12.to=Counter
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target7.y=190
 target7.x=110
 target2.editor.height=700
@@ -160,17 +236,29 @@ target3.y=10
 target3.x=160
 target11.width=80
 dependency7.to=TomatoPile
+<<<<<<< HEAD
 dependency12.from=MyGreep
+=======
+dependency12.from=Ship
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target3.height=50
 class.Timer.image=Counter.png
 dependency8.type=UsesDependency
 target1.y=90
 target1.x=10
+<<<<<<< HEAD
 dependency22.from=ENGreep
 class.Smoke.image=smoke-green.png
 target12.type=ClassTarget
 class.Earth.superclass=greenfoot.World
 dependency17.to=TomatoPile
+=======
+dependency22.from=SimpleGreep
+class.Smoke.image=smoke-green.png
+target12.type=ClassTarget
+class.Earth.superclass=greenfoot.World
+dependency17.to=Earth
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency16.from=Greep
 class.Ship.image=spaceship.png
 class.HouseGreep.superclass=Greep
@@ -178,12 +266,20 @@ target1.editor.width=900
 dependency2.from=Earth
 target8.editor.y=-8
 target8.editor.x=-1032
+<<<<<<< HEAD
 target11.editor.height=876
+=======
+target11.editor.height=700
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency6.from=Earth
 target8.editor.width=1040
 project.charset=x-MacRoman
 target3.showInterface=false
+<<<<<<< HEAD
 dependency24.to=SimpleGreep
+=======
+dependency24.to=TomatoPile
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target3.name=Smoke
 target6.showInterface=false
 target9.showInterface=false
@@ -192,13 +288,22 @@ target7.name=SimpleGreep
 target9.naviview.expanded=true
 target2.naviview.expanded=true
 dependency11.type=UsesDependency
+<<<<<<< HEAD
 package.numDependencies=24
+=======
+package.numDependencies=23
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target9.editor.y=22
 target9.editor.x=4
 class.SimpleGreep.image=greep.png
 dependency21.type=UsesDependency
+<<<<<<< HEAD
 dependency13.to=Greep
 package.numTargets=11
+=======
+dependency13.to=Ship
+package.numTargets=10
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target6.editor.width=900
 target12.name=SimpleGreep
 dependency15.type=UsesDependency
@@ -209,6 +314,7 @@ target8.width=80
 target12.showInterface=false
 dependency8.to=Ship
 dependency19.type=UsesDependency
+<<<<<<< HEAD
 simulation.speed=100
 target9.width=80
 target7.height=50
@@ -217,16 +323,34 @@ dependency5.type=UsesDependency
 target8.type=ClassTarget
 dependency18.to=Earth
 dependency13.from=Ship
+=======
+simulation.speed=60
+target9.width=80
+target7.height=50
+dependency20.to=TomatoPile
+dependency5.type=UsesDependency
+target8.type=ClassTarget
+dependency18.to=ENGreep
+dependency13.from=Greep
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 dependency9.type=UsesDependency
 target3.editor.height=700
 target7.naviview.expanded=true
 target6.width=90
+<<<<<<< HEAD
 dependency23.from=ENGreep
+=======
+dependency23.from=SimpleGreep
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target10.height=50
 class.Animal.superclass=greenfoot.Actor
 target7.width=100
 target6.editor.height=700
+<<<<<<< HEAD
 dependency17.from=Greep
+=======
+dependency17.from=ScoreBoard
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
 target9.editor.height=700
 dependency3.from=Earth
 class.Actor.superclass=
@@ -247,4 +371,8 @@ target4.height=50
 class.Timer.superclass=Counter
 target1.width=80
 class.Counter.image=Counter.png
+<<<<<<< HEAD
 dependency14.to=MyGreep
+=======
+dependency14.to=TomatoPile
+>>>>>>> d3f75178c236f4ab5fa0fbe2b84e6d96ac07d9ab
