@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Calendar;
-
+import java.util.ArrayList;
 /**
  * The ScoreBoard is used to display results on the screen. It can display some
  * text and several numbers.
@@ -34,7 +34,6 @@ public class ScoreBoard extends Actor
         }
 
         makeImage(authors, "Final score", total1, total2);
-        addMapScores(scores[0].length-1, scores);
         printResultToTerminal(authors, scores, new int[]{total1, total2});
         
         //makeImage(authors, "Map " + (map + 1), scores[0][map], scores[1][map]);
@@ -48,7 +47,7 @@ public class ScoreBoard extends Actor
     public ScoreBoard(String[] authors, int map, int[][] scores)
     {
         makeImage(authors, "Map " + (map + 1), scores[0][map], scores[1][map]);
-        addMapScores(map, scores);
+
         if(Earth.PLAY_SOUNDS) {
             Greenfoot.playSound("game-over.wav");
         }
@@ -57,18 +56,18 @@ public class ScoreBoard extends Actor
     /**
      * Create a score board for the final result.
      */
-    public ScoreBoard(String[] authors, int[][] scores)
+    public ScoreBoard(String[] authors, int[][] wins,ArrayList<Integer> team1scores,ArrayList<Integer> team2scores,int runs)
     {
         int total1 = 0;
         int total2 = 0;
-        for (int i = 0; i < scores[0].length; i++) {
-            total1 += scores[0][i];
-            total2 += scores[1][i];
+        for (int i = 0; i < wins[0].length; i++) {
+            total1 += wins[0][i];
+            total2 += wins[1][i];
         }
 
         makeImage(authors, "Final score", total1, total2);
-        addMapScores(scores[0].length-1, scores);
-        printResultToTerminal(authors, scores, new int[]{total1, total2});
+        addMapScores(runs, team1scores,team2scores);
+        printResultToTerminal(authors, wins, new int[]{total1, total2});
         if(Earth.PLAY_SOUNDS) {
             Greenfoot.playSound("game-over.wav");
         }
@@ -107,8 +106,10 @@ public class ScoreBoard extends Actor
                 
         font = font.deriveFont(FONT_SIZE);
         image.setFont(font);
-        image.drawString(authors[0] + " scored: " + (score1 - score2), 60, 300);        
-        
+        if (score1-score2 > 0)
+            image.drawString(authors[0] + " won: " + (score1), 60, 300);        
+        else 
+           image.drawString(authors[1] + " won: " + (score2), 60, 300);        
         font = font.deriveFont(30.0f);
         image.setFont(font);
         image.drawString(text, 60, 460);
@@ -121,17 +122,17 @@ public class ScoreBoard extends Actor
      * array with all scores, 'mapNo' is the number of the current map (array entries
      * past this value have no valid value).
      */
-    private void addMapScores(int mapNo, int[][] scores)
+    private void addMapScores(int mapNo, ArrayList<Integer> team1scores,ArrayList<Integer> team2scores)
     {
         GreenfootImage image = getImage();
         Font font = image.getFont();
         font = font.deriveFont(20.0f);
         image.setFont(font);
         image.setColor(Color.WHITE);
-        for(int i = 0; i <= mapNo; i++) {
-            String score1 = "" + scores[0][i];
+        for(int i = 0; i < mapNo; i++) {
+            String score1 = "" + team1scores.get(i);
             score1 += "    ".substring(score1.length());
-            image.drawString("Map " + (i+1) + ":   " + score1 + scores[1][i], 500, 380+(i*28));
+            image.drawString("Round " + (i+1) + ":   " + score1 + team2scores.get(i), 500, 380+(i*28));
         }
     }
     

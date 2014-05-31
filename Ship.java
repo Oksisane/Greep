@@ -2,8 +2,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-
+import java.lang.Class;
+import java.lang.reflect.Constructor;
 import java.awt.Font;
+import java.lang.ClassNotFoundException;
+import java.lang.NoSuchMethodException;
+import java.lang.InstantiationException;
+import java.lang.IllegalAccessException;
 
 /**
  * A space ship. It comes from space, lands, and releases some Greeps into the world.
@@ -20,14 +25,18 @@ public class Ship extends Actor
      * Method that creates the Greeps. 
      * You can change the class that objects are created from here.
      */
-    private Greep createGreep() 
-    {
-        if(teamNumber == 1) {
-            return new ENGreep(this);
+    private Greep createGreep()  
+    { 
+       System.out.println(greepClass);
+       try {
+               Class<?> team1 = Class.forName(greepClass.toString());
+               Constructor<?> constructor = team1.getConstructor(Ship.class);
+               return (Greep) constructor.newInstance(this);
         }
-        else {
-            return new SimpleGreep(this);
-        }        
+        catch (Exception e){
+            e.printStackTrace();
+        }
+         return new SimpleGreep(this);
     }
     
     private int totalPassengers = 20;     // Total number of passengers in this ship.
@@ -40,12 +49,13 @@ public class Ship extends Actor
     private int teamNumber; // Team number. Should be 1 or 2.    
     private int direction = 1; // 1 is positive y-direction, -1 is negative.    
     private String greepName; // Name of the Greeps produced by this ship.    
-    
+    private String greepClass;
     /**
      * Create a space ship. The parameter specifies at what height to land.
      */
-    public Ship(String imageName, int position, int teamNumber)
+    public Ship(String imageName,String greepClass, int position, int teamNumber)
     {
+        this.greepClass = greepClass;
         targetPosition = position;
         this.teamNumber = teamNumber;
         GreenfootImage im = new GreenfootImage(imageName);
