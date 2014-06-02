@@ -27,7 +27,6 @@ public class Ship extends Actor
      */
     private Greep createGreep()  
     { 
-       System.out.println(greepClass);
        try {
                Class<?> team1 = Class.forName(greepClass.toString());
                Constructor<?> constructor = team1.getConstructor(Ship.class);
